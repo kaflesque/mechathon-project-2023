@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="rover-control">
+        <h1>Rover Control</h1>
+        <div class="button-container">
+            <button id="forward" href="/control/forward">Forward</button>
+            <button id="backward"href="/control/backward">Backward</button><br>
+            <button id="left" href="/control/left">Left</button>
+            <button id="right" href="/control/right">Right</button><br>
+        </div>
+        <div class="camera-container">
+            <h1>Mud Detection</h1>
+            <img  id="camera-feed" src="{{ url_for('video_feed') }}" width="600" height="350" />
+            <p>Mud Detected in green box</p>  
+            <button id="fullscreen-button">
+                <i class="fas fa-expand"></i> Fullscreen
+            </button>      
+        </div>
+    </div>
+    <p style="color: white;">Made by "Team Undefined" for Mechathon</p>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
